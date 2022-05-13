@@ -1,5 +1,7 @@
 <template>
-  <GuitarChord firstFinger="00" secondFinger="02" thirdFinger="12" fourthFinger="52" barrePosition="1"/>
+  <div class="chords-container">
+    <GuitarChord class="guitar-chord" firstFinger="00" secondFinger="02" thirdFinger="12" fourthFinger="52" barrePosition="1"/>
+  </div>
 </template>
 
 <script>
@@ -14,17 +16,14 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.chords-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
-/*body, html {
-  border: 0;
-  padding: 0;
-  margin: 0;
-}*/
+.guitar-chord {
+  flex-basis: 300px;
+}
 </style>
