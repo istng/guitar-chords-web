@@ -43,7 +43,7 @@ export default {
     thirdFinger: String,
     fourthFinger: String,
     barre: Object,
-    deadString: String
+    deadStrings: Array
   },
   setup(props) {
     var cells = {
@@ -57,7 +57,9 @@ export default {
 
     cells[props.openString+"0"] = "0";
 
-    cells[props.deadString+"0"] = "X";
+    props.deadStrings.forEach((deadString) => {
+      cells[deadString+"0"] = "X";
+    });
 
     cells[props.firstFinger] = "1";
     cells[props.secondFinger] = "2";

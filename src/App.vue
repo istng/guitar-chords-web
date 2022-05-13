@@ -1,7 +1,7 @@
 <template>
   <div class="chords-container">
-  <GuitarChord class="guitar-chord" openString="5" firstFinger="00" secondFinger="12" thirdFinger="22" fourthFinger="42" :barre='{position: "1", cells: ["0","1","2","3","4"]}'/>
-<GuitarChord class="guitar-chord" openString="4" firstFinger="00" secondFinger="12" thirdFinger="22" fourthFinger="42" :barre='{position: "1", cells: ["0","1","2","3","4"]}' deadString="5" />
+  <GuitarChord class="guitar-chord" openString="5" firstFinger="00" secondFinger="12" thirdFinger="22" fourthFinger="42" :barre='{position: "1", cells: ["0","1","2","3","4"]}' :deadStrings='[]'/>
+<GuitarChord class="guitar-chord" openString="4" firstFinger="00" secondFinger="12" thirdFinger="22" fourthFinger="42" :barre='{position: "1", cells: ["0","1","2","3","4"]}' :deadStrings='["4","5"]' />
   </div>
 </template>
 
@@ -19,7 +19,7 @@ export default {
 <style>
 .chords-container {
   display: flex;
-  gap: 10px;
+  gap: 25px;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
