@@ -1,6 +1,7 @@
 <template>
   <div class="chords-container">
-    <GuitarChord class="guitar-chord" firstFinger="00" secondFinger="02" thirdFinger="12" fourthFinger="52" barrePosition="1"/>
+  <GuitarChord class="guitar-chord" openString="5" firstFinger="00" secondFinger="12" thirdFinger="22" fourthFinger="42" :barre='{position: "1", cells: ["0","1","2","3","4"]}'/>
+<GuitarChord class="guitar-chord" openString="4" firstFinger="00" secondFinger="12" thirdFinger="22" fourthFinger="42" :barre='{position: "1", cells: ["0","1","2","3","4"]}' deadString="5" />
   </div>
 </template>
 

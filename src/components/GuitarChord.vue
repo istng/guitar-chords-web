@@ -6,82 +6,84 @@
       <div class="third-fourth-fret fret"></div>
     </div>
     <div class="strings">
-      <div class="string-cell"><hr class="string"><div class="cell" id="cell-00"></div></div>
-      <div class="string-cell"><hr class="string"><div class="cell" id="cell-01"></div></div>
-      <div class="string-cell"><hr class="string"><div class="cell" id="cell-02"></div></div>
+      <div class="string-cell"><hr class="string"><div class="cell" :class='getClassType(cells["00"])'>{{cells["00"]}}</div></div>
+      <div class="string-cell"><hr class="string"><div class="cell" :class='getClassType(cells["01"])'>{{cells["01"]}}</div></div>
+      <div class="string-cell"><hr class="string"><div class="cell" :class='getClassType(cells["02"])'>{{cells["02"]}}</div></div>
       
-      <div class="string-cell"><hr class="string"><div class="cell" id="cell-10"></div></div>
-      <div class="string-cell"><hr class="string"><div class="cell" id="cell-11"></div></div>
-      <div class="string-cell"><hr class="string"><div class="cell" id="cell-12"></div></div>
+      <div class="string-cell"><hr class="string"><div class="cell" :class='getClassType(cells["10"])'>{{cells["10"]}}</div></div>
+      <div class="string-cell"><hr class="string"><div class="cell" :class='getClassType(cells["11"])'>{{cells["11"]}}</div></div>
+      <div class="string-cell"><hr class="string"><div class="cell" :class='getClassType(cells["12"])'>{{cells["12"]}}</div></div>
 
-      <div class="string-cell"><hr class="string"><div class="cell" id="cell-20"></div></div>
-      <div class="string-cell"><hr class="string"><div class="cell" id="cell-21"></div></div>
-      <div class="string-cell"><hr class="string"><div class="cell" id="cell-22"></div></div>
+      <div class="string-cell"><hr class="string"><div class="cell" :class='getClassType(cells["20"])'>{{cells["20"]}}</div></div>
+      <div class="string-cell"><hr class="string"><div class="cell" :class='getClassType(cells["21"])'>{{cells["21"]}}</div></div>
+      <div class="string-cell"><hr class="string"><div class="cell" :class='getClassType(cells["22"])'>{{cells["22"]}}</div></div>
 
-      <div class="string-cell"><hr class="string"><div class="cell" id="cell-30"></div></div>
-      <div class="string-cell"><hr class="string"><div class="cell" id="cell-31"></div></div>
-      <div class="string-cell"><hr class="string"><div class="cell" id="cell-32"></div></div>
+      <div class="string-cell"><hr class="string"><div class="cell" :class='getClassType(cells["30"])'>{{cells["30"]}}</div></div>
+      <div class="string-cell"><hr class="string"><div class="cell" :class='getClassType(cells["31"])'>{{cells["31"]}}</div></div>
+      <div class="string-cell"><hr class="string"><div class="cell" :class='getClassType(cells["32"])'>{{cells["32"]}}</div></div>
 
-      <div class="string-cell"><hr class="string"><div class="cell" id="cell-40"></div></div>
-      <div class="string-cell"><hr class="string"><div class="cell" id="cell-41"></div></div>
-      <div class="string-cell"><hr class="string"><div class="cell" id="cell-42"></div></div>
+      <div class="string-cell"><hr class="string"><div class="cell" :class='getClassType(cells["40"])'>{{cells["40"]}}</div></div>
+      <div class="string-cell"><hr class="string"><div class="cell" :class='getClassType(cells["41"])'>{{cells["41"]}}</div></div>
+      <div class="string-cell"><hr class="string"><div class="cell" :class='getClassType(cells["42"])'>{{cells["42"]}}</div></div>
 
-      <div class="string-cell"><hr class="string"><div class="cell" id="cell-50"></div></div>
-      <div class="string-cell"><hr class="string"><div class="cell" id="cell-51"></div></div>
-      <div class="string-cell"><hr class="string"><div class="cell" id="cell-52"></div></div>
+      <div class="string-cell"><hr class="string"><div class="cell" :class='getClassType(cells["50"])'>{{cells["50"]}}</div></div>
+      <div class="string-cell"><hr class="string"><div class="cell" :class='getClassType(cells["51"])'>{{cells["51"]}}</div></div>
+      <div class="string-cell"><hr class="string"><div class="cell" :class='getClassType(cells["52"])'>{{cells["52"]}}</div></div>
     </div>
   </div>
 </template>
 
 <script>
-
-function styleChanger(element, styles) {
-  Object.entries(styles).forEach((style) => {
-    element.style[style[0]] = style[1];
-  });
-}
-
-import {
-  onMounted
-} from "vue";
 export default {
   name: 'GuitarChord',
   props: {
+    openString: String,
     firstFinger: String,
     secondFinger: String,
     thirdFinger: String,
     fourthFinger: String,
-    barre: Object
+    barre: Object,
+    deadString: String
   },
   setup(props) {
+    var cells = {
+      "01": "", "02": "", "03": "", 
+      "11": "", "12": "", "13": "", 
+      "21": "", "22": "", "23": "", 
+      "31": "", "32": "", "33": "", 
+      "41": "", "42": "", "43": "", 
+      "51": "", "52": "", "53": ""
+    };
 
-    onMounted(() => {
-      document.getElementById("cell-"+props.firstFinger).innerText = "1";
-      document.getElementById("cell-"+props.secondFinger).innerText = "2";
-      document.getElementById("cell-"+props.thirdFinger).innerText = "3";
-      document.getElementById("cell-"+props.fourthFinger).innerText = "4";
+    cells[props.openString+"0"] = "0";
 
-      var cellStyle = {
-        "background-color": "red",
-        "border-radius": "100%",
-        "padding": "5%",
-        "color": "white"
-      }
+    cells[props.deadString+"0"] = "X";
 
-      styleChanger(document.getElementById("cell-"+props.firstFinger), cellStyle);
-      styleChanger(document.getElementById("cell-"+props.secondFinger), cellStyle);
-      styleChanger(document.getElementById("cell-"+props.thirdFinger), cellStyle);
-      styleChanger(document.getElementById("cell-"+props.fourthFinger), cellStyle);
-      console.log(props.barre)
+    cells[props.firstFinger] = "1";
+    cells[props.secondFinger] = "2";
+    cells[props.thirdFinger] = "3";
+    cells[props.fourthFinger] = "4";
 
-      var barreStyle = {
-        "border-left": "6px solid blue",
-        "height": "100%"
-      }
-      props.barre.cells.forEach((cell) => {
-        styleChanger(document.getElementById("cell-"+cell+props.barre.position), barreStyle);
-      });
+    props.barre.cells.forEach((cell) => {
+      cells[cell+props.barre.position] = " ";
     });
+
+    const getClassType = (string) => {
+      if(string == "0")
+        return "openStringCell";
+      if(string == "1" || string == "2" || string == "3" || string == "4")
+        return "fingeredCell";
+      if(string == " ")
+        return "barreCell";
+      if(string == "X")
+        return "deadStringCell";
+      return "";
+    };
+
+    return {
+      cells,
+      getClassType
+    }
   }
 }
 </script>
@@ -145,5 +147,28 @@ export default {
   grid-row: 1 / 1;
   align-self: center;
   justify-self: center;
+}
+
+.fingeredCell {
+  background-color: red;
+  border-radius: 100%;
+  padding: 5%;
+  color: white;
+}
+.openStringCell {
+  background-color: blue;
+  border-radius: 100%;
+  padding: 5%;
+  color: white;
+}
+.barreCell {
+  border-left: 6px solid yellow;
+  height: 100%;
+}
+.deadStringCell {
+  background-color: grey;
+  border-radius: 100%;
+  padding: 5%;
+  color: white;
 }
 </style>
