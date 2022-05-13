@@ -1,34 +1,37 @@
 <template>
-  <div class="chord">
-    <div class="frets">
-      <div class="first-second-fret fret"></div>
-      <div class="empty-fret"></div>
-      <div class="third-fourth-fret fret"></div>
-    </div>
-    <div class="strings">
-      <div class="string-cell"><hr class="string"><div class="cell" :class='getClassType(cells["00"])'>{{cells["00"]}}</div></div>
-      <div class="string-cell"><hr class="string"><div class="cell" :class='getClassType(cells["01"])'>{{cells["01"]}}</div></div>
-      <div class="string-cell"><hr class="string"><div class="cell" :class='getClassType(cells["02"])'>{{cells["02"]}}</div></div>
-      
-      <div class="string-cell"><hr class="string"><div class="cell" :class='getClassType(cells["10"])'>{{cells["10"]}}</div></div>
-      <div class="string-cell"><hr class="string"><div class="cell" :class='getClassType(cells["11"])'>{{cells["11"]}}</div></div>
-      <div class="string-cell"><hr class="string"><div class="cell" :class='getClassType(cells["12"])'>{{cells["12"]}}</div></div>
+  <div class="chord-container">
+    <h4 class="chord-name">{{name}}</h4>
+    <div class="chord">
+      <div class="frets">
+        <div class="first-second-fret fret"></div>
+        <div class="empty-fret"></div>
+        <div class="third-fourth-fret fret"></div>
+      </div>
+      <div class="strings">
+        <div class="string-cell"><hr class="string"><div :class='getClassType("00")'>{{cells["00"]}}</div></div>
+        <div class="string-cell"><hr class="string"><div :class='getClassType("01")'>{{cells["01"]}}</div></div>
+        <div class="string-cell"><hr class="string"><div :class='getClassType("02")'>{{cells["02"]}}</div></div>
+        
+        <div class="string-cell"><hr class="string"><div :class='getClassType("10")'>{{cells["10"]}}</div></div>
+        <div class="string-cell"><hr class="string"><div :class='getClassType("11")'>{{cells["11"]}}</div></div>
+        <div class="string-cell"><hr class="string"><div :class='getClassType("12")'>{{cells["12"]}}</div></div>
 
-      <div class="string-cell"><hr class="string"><div class="cell" :class='getClassType(cells["20"])'>{{cells["20"]}}</div></div>
-      <div class="string-cell"><hr class="string"><div class="cell" :class='getClassType(cells["21"])'>{{cells["21"]}}</div></div>
-      <div class="string-cell"><hr class="string"><div class="cell" :class='getClassType(cells["22"])'>{{cells["22"]}}</div></div>
+        <div class="string-cell"><hr class="string"><div :class='getClassType("20")'>{{cells["20"]}}</div></div>
+        <div class="string-cell"><hr class="string"><div :class='getClassType("21")'>{{cells["21"]}}</div></div>
+        <div class="string-cell"><hr class="string"><div :class='getClassType("22")'>{{cells["22"]}}</div></div>
 
-      <div class="string-cell"><hr class="string"><div class="cell" :class='getClassType(cells["30"])'>{{cells["30"]}}</div></div>
-      <div class="string-cell"><hr class="string"><div class="cell" :class='getClassType(cells["31"])'>{{cells["31"]}}</div></div>
-      <div class="string-cell"><hr class="string"><div class="cell" :class='getClassType(cells["32"])'>{{cells["32"]}}</div></div>
+        <div class="string-cell"><hr class="string"><div :class='getClassType("30")'>{{cells["30"]}}</div></div>
+        <div class="string-cell"><hr class="string"><div :class='getClassType("31")'>{{cells["31"]}}</div></div>
+        <div class="string-cell"><hr class="string"><div :class='getClassType("32")'>{{cells["32"]}}</div></div>
 
-      <div class="string-cell"><hr class="string"><div class="cell" :class='getClassType(cells["40"])'>{{cells["40"]}}</div></div>
-      <div class="string-cell"><hr class="string"><div class="cell" :class='getClassType(cells["41"])'>{{cells["41"]}}</div></div>
-      <div class="string-cell"><hr class="string"><div class="cell" :class='getClassType(cells["42"])'>{{cells["42"]}}</div></div>
+        <div class="string-cell"><hr class="string"><div :class='getClassType("40")'>{{cells["40"]}}</div></div>
+        <div class="string-cell"><hr class="string"><div :class='getClassType("41")'>{{cells["41"]}}</div></div>
+        <div class="string-cell"><hr class="string"><div :class='getClassType("42")'>{{cells["42"]}}</div></div>
 
-      <div class="string-cell"><hr class="string"><div class="cell" :class='getClassType(cells["50"])'>{{cells["50"]}}</div></div>
-      <div class="string-cell"><hr class="string"><div class="cell" :class='getClassType(cells["51"])'>{{cells["51"]}}</div></div>
-      <div class="string-cell"><hr class="string"><div class="cell" :class='getClassType(cells["52"])'>{{cells["52"]}}</div></div>
+        <div class="string-cell"><hr class="string"><div :class='getClassType("50")'>{{cells["50"]}}</div></div>
+        <div class="string-cell"><hr class="string"><div :class='getClassType("51")'>{{cells["51"]}}</div></div>
+        <div class="string-cell"><hr class="string"><div :class='getClassType("52")'>{{cells["52"]}}</div></div>
+      </div>
     </div>
   </div>
 </template>
@@ -37,7 +40,8 @@
 export default {
   name: 'GuitarChord',
   props: {
-    openString: String,
+    name: String,
+    openStrings: Array,
     firstFinger: String,
     secondFinger: String,
     thirdFinger: String,
@@ -55,7 +59,9 @@ export default {
       "51": "", "52": "", "53": ""
     };
 
-    cells[props.openString+"0"] = "0";
+    props.openStrings.forEach((openString) => {
+      cells[openString+"0"] = "O";
+    });
 
     props.deadStrings.forEach((deadString) => {
       cells[deadString+"0"] = "X";
@@ -70,16 +76,20 @@ export default {
       cells[cell+props.barre.position] = " ";
     });
 
-    const getClassType = (string) => {
-      if(string == "0")
-        return "openStringCell";
-      if(string == "1" || string == "2" || string == "3" || string == "4")
-        return "fingeredCell";
-      if(string == " ")
-        return "barreCell";
-      if(string == "X")
-        return "deadStringCell";
-      return "";
+    const getClassType = (cell) => {
+      if(cells[cell] == "O")
+        return "cell openStringCell";
+      if(cells[cell] == "1" || cells[cell] == "2" || cells[cell] == "3" || cells[cell] == "4")
+        return "cell fingeredCell";
+      if(cells[cell] == " " && cell[0] == 0)
+        return "cell barreCell barreCellStart";
+      if(cells[cell] == " " && cell[0] == 5)
+        return "cell barreCell barreCellEnd";
+      if(cells[cell] == " ")
+        return "cell barreCell";
+      if(cells[cell] == "X")
+        return "cell deadStringCell";
+      return "cell";
     };
 
     return {
@@ -92,6 +102,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.chord-name {
+  text-align: center;
+  font-weight: normal;
+}
+
 .chord {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -106,8 +121,8 @@ export default {
   grid-row: 1 / 1;
 }
 .fret {
-  border-left: 6px solid green;
-  border-right: 6px solid green;
+  border-left: 6px solid #916627;
+  border-right: 6px solid #916627;
   height: 100%;
 }
 .first-fret {
@@ -149,28 +164,36 @@ export default {
   grid-row: 1 / 1;
   align-self: center;
   justify-self: center;
+  border-radius: 100%;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
 .fingeredCell {
-  background-color: red;
-  border-radius: 100%;
-  padding: 5%;
-  color: white;
+  background-color: #f26c51;
 }
 .openStringCell {
-  background-color: blue;
-  border-radius: 100%;
-  padding: 5%;
-  color: white;
+  background-color: #7896c2;
+}
+.barreCellStart {
+  border-radius: 10px 10px 0 0 !important;
+}
+.barreCellEnd {
+  border-radius: 0 0 10px 10px !important;
 }
 .barreCell {
-  border-left: 6px solid yellow;
+  padding: 0;
+  border-radius: 0;
+  border-left: 6px solid #f9684c !important;
   height: 100%;
 }
 .deadStringCell {
   background-color: grey;
-  border-radius: 100%;
-  padding: 5%;
+}
+.cell {
   color: white;
+  opacity: 0.95;
 }
 </style>
