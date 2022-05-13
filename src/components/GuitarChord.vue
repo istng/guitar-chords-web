@@ -6,29 +6,29 @@
       <div class="third-fourth-fret fret"></div>
     </div>
     <div class="strings">
-      <div class="first-cell first-string"><hr class="string"><div class="finger position-0" id="finger-00"></div></div>
-      <div class="second-cell first-string"><hr class="string"><div class="finger position-1" id="finger-01"></div></div>
-      <div class="third-cell first-string"><hr class="string"><div class="finger position-2" id="finger-02"></div></div>
+      <div class="string-cell"><hr class="string"><div class="cell" id="cell-00"></div></div>
+      <div class="string-cell"><hr class="string"><div class="cell" id="cell-01"></div></div>
+      <div class="string-cell"><hr class="string"><div class="cell" id="cell-02"></div></div>
       
-      <div class="first-cell second-string"><hr class="string"><div class="finger position-0" id="finger-10"></div></div>
-      <div class="second-cell second-string"><hr class="string"><div class="finger position-1" id="finger-11"></div></div>
-      <div class="third-cell second-string"><hr class="string"><div class="finger position-2" id="finger-12"></div></div>
+      <div class="string-cell"><hr class="string"><div class="cell" id="cell-10"></div></div>
+      <div class="string-cell"><hr class="string"><div class="cell" id="cell-11"></div></div>
+      <div class="string-cell"><hr class="string"><div class="cell" id="cell-12"></div></div>
 
-      <div class="first-cell third-string"><hr class="string"><div class="finger position-0" id="finger-20"></div></div>
-      <div class="second-cell third-string"><hr class="string"><div class="finger position-1" id="finger-21"></div></div>
-      <div class="third-cell third-string"><hr class="string"><div class="finger position-2" id="finger-22"></div></div>
+      <div class="string-cell"><hr class="string"><div class="cell" id="cell-20"></div></div>
+      <div class="string-cell"><hr class="string"><div class="cell" id="cell-21"></div></div>
+      <div class="string-cell"><hr class="string"><div class="cell" id="cell-22"></div></div>
 
-      <div class="first-cell fourth-string"><hr class="string"><div class="finger position-0" id="finger-30"></div></div>
-      <div class="second-cell fourth-string"><hr class="string"><div class="finger position-1" id="finger-31"></div></div>
-      <div class="third-cell fourth-string"><hr class="string"><div class="finger position-2" id="finger-32"></div></div>
+      <div class="string-cell"><hr class="string"><div class="cell" id="cell-30"></div></div>
+      <div class="string-cell"><hr class="string"><div class="cell" id="cell-31"></div></div>
+      <div class="string-cell"><hr class="string"><div class="cell" id="cell-32"></div></div>
 
-      <div class="first-cell fifth-string"><hr class="string"><div class="finger position-0" id="finger-40"></div></div>
-      <div class="second-cell fifth-string"><hr class="string"><div class="finger position-1" id="finger-41"></div></div>
-      <div class="third-cell fifth-string"><hr class="string"><div class="finger position-2" id="finger-42"></div></div>
+      <div class="string-cell"><hr class="string"><div class="cell" id="cell-40"></div></div>
+      <div class="string-cell"><hr class="string"><div class="cell" id="cell-41"></div></div>
+      <div class="string-cell"><hr class="string"><div class="cell" id="cell-42"></div></div>
 
-      <div class="first-cell sixth-string"><hr class="string"><div class="finger position-0" id="finger-50"></div></div>
-      <div class="second-cell sixth-string"><hr class="string"><div class="finger position-1" id="finger-51"></div></div>
-      <div class="third-cell sixth-string"><hr class="string"><div class="finger position-2" id="finger-52"></div></div>
+      <div class="string-cell"><hr class="string"><div class="cell" id="cell-50"></div></div>
+      <div class="string-cell"><hr class="string"><div class="cell" id="cell-51"></div></div>
+      <div class="string-cell"><hr class="string"><div class="cell" id="cell-52"></div></div>
     </div>
   </div>
 </template>
@@ -51,35 +51,35 @@ export default {
     secondFinger: String,
     thirdFinger: String,
     fourthFinger: String,
-    barrePosition: String
+    barre: Object
   },
   setup(props) {
 
     onMounted(() => {
-      document.getElementById("finger-"+props.firstFinger).innerText = "1";
-      document.getElementById("finger-"+props.secondFinger).innerText = "2";
-      document.getElementById("finger-"+props.thirdFinger).innerText = "3";
-      document.getElementById("finger-"+props.fourthFinger).innerText = "4";
+      document.getElementById("cell-"+props.firstFinger).innerText = "1";
+      document.getElementById("cell-"+props.secondFinger).innerText = "2";
+      document.getElementById("cell-"+props.thirdFinger).innerText = "3";
+      document.getElementById("cell-"+props.fourthFinger).innerText = "4";
 
-      var fingerStyle = {
+      var cellStyle = {
         "background-color": "red",
         "border-radius": "100%",
         "padding": "5%",
         "color": "white"
       }
 
-      styleChanger(document.getElementById("finger-"+props.firstFinger), fingerStyle);
-      styleChanger(document.getElementById("finger-"+props.secondFinger), fingerStyle);
-      styleChanger(document.getElementById("finger-"+props.thirdFinger), fingerStyle);
-      styleChanger(document.getElementById("finger-"+props.fourthFinger), fingerStyle);
+      styleChanger(document.getElementById("cell-"+props.firstFinger), cellStyle);
+      styleChanger(document.getElementById("cell-"+props.secondFinger), cellStyle);
+      styleChanger(document.getElementById("cell-"+props.thirdFinger), cellStyle);
+      styleChanger(document.getElementById("cell-"+props.fourthFinger), cellStyle);
+      console.log(props.barre)
 
       var barreStyle = {
         "border-left": "6px solid blue",
         "height": "100%"
       }
-
-      Array.from(document.getElementsByClassName("position-"+props.barrePosition)).forEach((position) => {
-        styleChanger(position, barreStyle);
+      props.barre.cells.forEach((cell) => {
+        styleChanger(document.getElementById("cell-"+cell+props.barre.position), barreStyle);
       });
     });
   }
@@ -126,7 +126,7 @@ export default {
   grid-column: 1 / 1;
   grid-row: 1 / 1;
 }
-.first-cell, .second-cell, .third-cell {
+.string-cell {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: repeat(1, 1fr); 
@@ -140,7 +140,7 @@ export default {
   justify-self: stretch;
 }
 
-.finger {
+.cell {
   grid-column: 1 / 1;
   grid-row: 1 / 1;
   align-self: center;
