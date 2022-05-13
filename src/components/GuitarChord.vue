@@ -135,9 +135,11 @@ export default {
   grid-column: 1 / 1;
   grid-row: 1 / 1;
   width: 100%;
+  height: 0;
   align-self: center;
   justify-self: stretch;
 }
+
 .finger {
   grid-column: 1 / 1;
   grid-row: 1 / 1;
