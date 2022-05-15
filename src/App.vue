@@ -6,8 +6,8 @@
       :openStrings='[]' 
       firstFinger="50" 
       secondFinger="10" 
-      thirdFinger="12" 
-      fourthFinger="22" 
+      thirdFinger="22" 
+      fourthFinger="12" 
       :barre='{position: "", cells: []}' 
       :deadStrings='["0", "4"]'
     />
