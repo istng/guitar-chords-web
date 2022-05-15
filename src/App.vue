@@ -93,7 +93,7 @@
     />
     </div>
     <div class="contact">
-      <a href="https://www.youtube.com/channel/UC0paZQh-P3ruttlq26UmNig" target=”_blank”><font-awesome-icon :icon="['fab', 'youtube']"/></a> <a href="https://www.instagram.com/ivangk.gk/" target=”_blank”><font-awesome-icon :icon="['fab', 'instagram']"/></a> <a href="https://github.com/istng" target=”_blank”><font-awesome-icon :icon="['fab', 'github']"/></a> <a href="mailto:ivanstng@gmail.com"><font-awesome-icon :icon="['far', 'envelope']"/></a>
+      <a href="https://ivangk.web.app" target=”_blank”><font-awesome-icon :icon="['fas', 'user']"/></a> <a href="https://www.youtube.com/channel/UC0paZQh-P3ruttlq26UmNig" target=”_blank”><font-awesome-icon :icon="['fab', 'youtube']"/></a> <a href="https://www.instagram.com/ivangk.gk/" target=”_blank”><font-awesome-icon :icon="['fab', 'instagram']"/></a> <a href="https://github.com/istng" target=”_blank”><font-awesome-icon :icon="['fab', 'github']"/></a>
     </div>
   </div>
 </template>
@@ -101,12 +101,12 @@
 <script>
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faInstagram, faYoutube, faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 library.add(faInstagram);
 library.add(faYoutube);
 library.add(faGithub);
-library.add(faEnvelope);
+library.add(faUser);
 import GuitarChord from './components/GuitarChord.vue'
 
 export default {
