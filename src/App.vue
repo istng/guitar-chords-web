@@ -152,7 +152,7 @@ body {
 .contact {
   margin-top: 0.6rem; 
   margin-bottom: 0.6rem; 
-  color: #e9a44d;
+  color: white;
   word-spacing: 0.8rem;
 }
 a, a:hover, a:visited, a:active {
