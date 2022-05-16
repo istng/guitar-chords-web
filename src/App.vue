@@ -1,97 +1,18 @@
 <template>
   <div class="app-container">
     <div class="chords-container">
-    <GuitarChord class="guitar-chord" 
-      name="Major 7M △" 
-      :openStrings='[]' 
-      firstFinger="50" 
-      secondFinger="10" 
-      thirdFinger="22" 
-      fourthFinger="12" 
-      :barre='{position: "", cells: []}' 
-      :deadStrings='["0", "4"]'
+    <GuitarChord v-for="guitarChord in guitarChords" class="guitar-chord" 
+      :name='guitarChord.name' 
+      :openStrings='guitarChord.openStrings' 
+      :firstFinger='guitarChord.firstFinger' 
+      :secondFinger='guitarChord.secondFinger' 
+      :thirdFinger='guitarChord.thirdFinger' 
+      :fourthFinger='guitarChord.fourthFinger' 
+      :barre='guitarChord.barre' 
+      :deadStrings='guitarChord.deadStrings'
+      v-bind:key='guitarChord.name'
     />
-    <GuitarChord class="guitar-chord" 
-      name="Major 7m" 
-      :openStrings='[]'
-      firstFinger="" 
-      secondFinger="21" 
-      thirdFinger="42" 
-      fourthFinger="" 
-      :barre='{position: "0", cells: ["0", "1", "2", "3", "4", "5"]}' 
-      :deadStrings='[]'
-    />
-    <GuitarChord class="guitar-chord" 
-      name="Minor 7m" 
-      :openStrings='[]'
-      firstFinger="" 
-      secondFinger="" 
-      thirdFinger="42" 
-      fourthFinger="" 
-      :barre='{position: "0", cells: ["0", "1", "2", "3", "4", "5"]}' 
-      :deadStrings='[]'
-    />
-    <GuitarChord class="guitar-chord" 
-      name="Major 7M △" 
-      :openStrings='[]'
-      firstFinger="" 
-      secondFinger="21" 
-      thirdFinger="32" 
-      fourthFinger="12" 
-      :barre='{position: "0", cells: ["0", "1", "2", "3", "4"]}' 
-      :deadStrings='["5"]'
-    />
-    <GuitarChord class="guitar-chord" 
-      name="Major 7m" 
-      :openStrings='[]'
-      firstFinger="" 
-      secondFinger="" 
-      thirdFinger="32" 
-      fourthFinger="12" 
-      :barre='{position: "0", cells: ["0", "1", "2", "3", "4"]}' 
-      :deadStrings='["5"]'
-    />
-    <GuitarChord class="guitar-chord" 
-      name="Minor 7m" 
-      :openStrings='[]'
-      firstFinger="" 
-      secondFinger="" 
-      thirdFinger="32" 
-      fourthFinger="11" 
-      :barre='{position: "0", cells: ["0", "1", "2", "3", "4"]}' 
-      :deadStrings='["5"]'
-    />
-    <GuitarChord class="guitar-chord" 
-      name="Minor 7m (half diminished) Ø" 
-      :openStrings='[]'
-      firstFinger="10" 
-      secondFinger="51" 
-      thirdFinger="21" 
-      fourthFinger="31" 
-      :barre='{position: "", cells: []}' 
-      :deadStrings='["0","4"]'
-    />
-    <GuitarChord class="guitar-chord" 
-      name="Minor 7m (half diminished) Ø" 
-      :openStrings='[]'
-      firstFinger="40" 
-      secondFinger="20" 
-      thirdFinger="31" 
-      fourthFinger="11" 
-      :barre='{position: "", cells: []}' 
-      :deadStrings='["0","5"]'
-    />
-    <GuitarChord class="guitar-chord" 
-      name="Minor 6" 
-      :openStrings='[]'
-      firstFinger="11" 
-      secondFinger="21" 
-      thirdFinger="30" 
-      fourthFinger="51" 
-      :barre='{position: "", cells: []}' 
-      :deadStrings='["0", "4"]'
-    />
-    </div>
+     </div>
     <div class="contact">
       <a href="https://ivangk.web.app" target=”_blank”><font-awesome-icon :icon="['fas', 'user']"/></a> <a href="https://www.youtube.com/channel/UC0paZQh-P3ruttlq26UmNig" target=”_blank”><font-awesome-icon :icon="['fab', 'youtube']"/></a> <a href="https://www.instagram.com/ivangk.gk/" target=”_blank”><font-awesome-icon :icon="['fab', 'instagram']"/></a> <a href="https://github.com/istng" target=”_blank”><font-awesome-icon :icon="['fab', 'github']"/></a>
     </div>
@@ -108,13 +29,20 @@ library.add(faYoutube);
 library.add(faGithub);
 library.add(faUser);
 import GuitarChord from './components/GuitarChord.vue'
+import { guitarChords } from './variables/chords.js'
 
 export default {
   name: 'App',
   components: {
     FontAwesomeIcon,
     GuitarChord
+  },
+  setup() {
+    return {
+      guitarChords
+    };
   }
+
 }
 </script>
 
