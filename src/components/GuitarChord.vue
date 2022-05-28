@@ -3,9 +3,9 @@
     <h4 class="chord-name">{{name}}</h4>
     <div class="chord">
       <div class="frets">
-        <div class="first-second-fret fret"></div>
+        <div class="fret"></div>
         <div class="empty-fret"></div>
-        <div class="third-fourth-fret fret"></div>
+        <div class="fret"></div>
       </div>
       <div class="strings">
         <div class="string-cell"><hr class="string"><div :class='getClassType("00")'>{{cells["00"]}}</div></div>
@@ -51,12 +51,12 @@ export default {
   },
   setup(props) {
     var cells = {
-      "01": "", "02": "", "03": "", 
-      "11": "", "12": "", "13": "", 
-      "21": "", "22": "", "23": "", 
-      "31": "", "32": "", "33": "", 
-      "41": "", "42": "", "43": "", 
-      "51": "", "52": "", "53": ""
+      "00": "", "01": "", "02": "", 
+      "10": "", "11": "", "12": "", 
+      "20": "", "21": "", "22": "", 
+      "30": "", "31": "", "32": "", 
+      "40": "", "41": "", "42": "", 
+      "50": "", "51": "", "52": ""
     };
 
     props.openStrings.forEach((openString) => {
@@ -124,18 +124,6 @@ export default {
   border-left: 6px solid #916627;
   border-right: 6px solid #916627;
   height: 100%;
-}
-.first-fret {
-  align-self: center;
-  justify-self: start;
-}
-.second-fret, .third-fret {
-  align-self: center;
-  justify-self: start;
-}
-.fourth-fret {
-  align-self: center;
-  justify-self: end;
 }
 
 .strings {

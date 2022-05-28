@@ -1,18 +1,22 @@
 <template>
   <div class="app-container">
     <div class="chords-container">
-    <GuitarChord v-for="guitarChord in guitarChords" class="guitar-chord" 
-      :name='guitarChord.name' 
-      :openStrings='guitarChord.openStrings' 
-      :firstFinger='guitarChord.firstFinger' 
-      :secondFinger='guitarChord.secondFinger' 
-      :thirdFinger='guitarChord.thirdFinger' 
-      :fourthFinger='guitarChord.fourthFinger' 
-      :barre='guitarChord.barre' 
-      :deadStrings='guitarChord.deadStrings'
-      v-bind:key='guitarChord.name'
-    />
-     </div>
+      <GuitarChord v-for="guitarChord in guitarChords" class="guitar-chord" 
+        :name='guitarChord.name' 
+        :openStrings='guitarChord.openStrings' 
+        :firstFinger='guitarChord.firstFinger' 
+        :secondFinger='guitarChord.secondFinger' 
+        :thirdFinger='guitarChord.thirdFinger' 
+        :fourthFinger='guitarChord.fourthFinger' 
+        :barre='guitarChord.barre' 
+        :deadStrings='guitarChord.deadStrings'
+        v-bind:key='guitarChord.name'
+      />
+    </div>
+    <div class="scales-container">
+      <GuitarScale class="guitar-scale" :name='"Mayor Scale"' :scale='[1,0,2,0,3,4,0,5,0,6,0,7]' />
+      <GuitarScale class="guitar-scale" :name='"Minor Scale"' :scale='[1,0,2,3,0,4,0,5,6,0,7,0]' />
+    </div>
     <div class="contact">
       <a href="https://ivangk.web.app" target=”_blank”><font-awesome-icon :icon="['fas', 'user']"/></a> <a href="https://www.youtube.com/channel/UC0paZQh-P3ruttlq26UmNig" target=”_blank”><font-awesome-icon :icon="['fab', 'youtube']"/></a> <a href="https://www.instagram.com/ivangk.gk/" target=”_blank”><font-awesome-icon :icon="['fab', 'instagram']"/></a> <a href="https://github.com/istng" target=”_blank”><font-awesome-icon :icon="['fab', 'github']"/></a>
     </div>
@@ -28,14 +32,16 @@ library.add(faInstagram);
 library.add(faYoutube);
 library.add(faGithub);
 library.add(faUser);
-import GuitarChord from './components/GuitarChord.vue'
-import { guitarChords } from './variables/chords.js'
+import GuitarChord from './components/GuitarChord.vue';
+import GuitarScale from './components/GuitarScale.vue'
+import { guitarChords } from './variables/chords.js';
 
 export default {
   name: 'App',
   components: {
     FontAwesomeIcon,
-    GuitarChord
+    GuitarChord,
+    GuitarScale
   },
   setup() {
     return {
@@ -75,6 +81,16 @@ body {
   align-items: center;
 }
 .guitar-chord {
+  flex-basis: 300px;
+}
+.scales-container {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.guitar-scale {
   flex-basis: 300px;
 }
 .contact {
