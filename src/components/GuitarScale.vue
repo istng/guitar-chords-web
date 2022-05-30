@@ -77,11 +77,6 @@ export default {
       var currentCell = parseInt(firstCell[1]);
       var currentIntervalIndex = 0;
       while(currentString >= 0) {
-        //adjust for standard tuning
-        if(currentString == 1) {
-          currentIntervalIndex -= 1;
-        }
-
         while(currentCell <= 4) {
           if(currentIntervalIndex > 11)
             currentIntervalIndex = 0;
@@ -96,6 +91,11 @@ export default {
 
         currentCell = 0;
         currentString -= 1;
+        
+        //adjust for standard tuning
+        if(currentString == 1) {
+          currentIntervalIndex -= 1;
+        }
       }
 
       //go from current string and cell to sixth string
