@@ -1,6 +1,7 @@
 <template>
   <div class="chord-container">
-    <h4 class="chord-name">{{name}}</h4>
+    <h4 class="chord-name" v-if='language == "es"'>{{name.spanish}}</h4>
+    <h4 class="chord-name" v-else>{{name.english}}</h4>
     <div class="chord">
       <div class="frets">
         <div class="fret"></div>
@@ -41,6 +42,7 @@ export default {
   name: 'GuitarChord',
   props: {
     name: String,
+    language: String,
     openStrings: Array,
     firstFinger: String,
     secondFinger: String,

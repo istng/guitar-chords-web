@@ -3,6 +3,7 @@
     <div class="chords-container">
       <GuitarChord v-for="guitarChord in guitarChords" class="guitar-chord" 
         :name='guitarChord.name' 
+        :language='language'
         :openStrings='guitarChord.openStrings' 
         :firstFinger='guitarChord.firstFinger' 
         :secondFinger='guitarChord.secondFinger' 
@@ -10,12 +11,16 @@
         :fourthFinger='guitarChord.fourthFinger' 
         :barre='guitarChord.barre' 
         :deadStrings='guitarChord.deadStrings'
-        v-bind:key='guitarChord.name'
+        v-bind:key='guitarChord.name.english'
       />
     </div>
     <div class="scales-container">
-      <GuitarScale class="guitar-scale" :name='"Mayor Scale"' :scale='[1,0,2,0,3,4,0,5,0,6,0,7]' />
-      <GuitarScale class="guitar-scale" :name='"Minor Scale"' :scale='[1,0,2,3,0,4,0,5,6,0,7,0]' />
+      <GuitarScale v-for="guitarScale in guitarScales" class="guitar-scale"
+        :name='guitarScale.name'
+        :language='language'
+        :scale='guitarScale.scale'
+        v-bind:key='guitarScale.name.english'
+      />
     </div>
     <div class="contact">
       <a href="https://ivangk.web.app" target=”_blank”><font-awesome-icon :icon="['fas', 'user']"/></a> <a href="https://www.youtube.com/channel/UC0paZQh-P3ruttlq26UmNig" target=”_blank”><font-awesome-icon :icon="['fab', 'youtube']"/></a> <a href="https://www.instagram.com/ivangk.gk/" target=”_blank”><font-awesome-icon :icon="['fab', 'instagram']"/></a> <a href="https://github.com/istng" target=”_blank”><font-awesome-icon :icon="['fab', 'github']"/></a>
@@ -32,9 +37,14 @@ library.add(faInstagram);
 library.add(faYoutube);
 library.add(faGithub);
 library.add(faUser);
+import {
+  ref,
+  onMounted
+} from 'vue';
 import GuitarChord from './components/GuitarChord.vue';
 import GuitarScale from './components/GuitarScale.vue'
 import { guitarChords } from './variables/chords.js';
+import { guitarScales } from './variables/scales.js';
 
 export default {
   name: 'App',
@@ -44,8 +54,16 @@ export default {
     GuitarScale
   },
   setup() {
+    var language = ref("");
+
+    onMounted(() => {
+      language.value = navigator.language.substring(0,2);
+    });
+
     return {
-      guitarChords
+      language,
+      guitarChords,
+      guitarScales
     };
   }
 

@@ -1,6 +1,7 @@
 <template>
   <div class="scale-container">
-    <h4 class="scale-name">{{name}}</h4>
+    <h4 class="scale-name" v-if='language == "es"'>{{name.spanish}}</h4>
+    <h4 class="scale-name" v-else>{{name.english}}</h4>
     <div class="scale">
       <div class="frets">
         <div class="fret"></div>
@@ -59,6 +60,7 @@ export default {
   name: 'GuitarChord',
   props: {
     name: String,
+    language: String,
     scale: Array
   },
   setup(props) {

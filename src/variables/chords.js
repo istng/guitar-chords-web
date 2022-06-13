@@ -1,6 +1,9 @@
 export const guitarChords = [
   {
-    name: "Major 7M △",
+    name: {
+      english: "Major 7M △",
+      spanish: "Mayor 7M △"
+    },
     openStrings: [],
     firstFinger: "50",
     secondFinger: "10",
@@ -9,7 +12,11 @@ export const guitarChords = [
     barre: {position: "", cells: []},
     deadStrings: ["0", "4"],
   },
-  { name: "Major 7m",
+  {
+    name: {
+      english: "Major 7",
+      spanish: "Mayor 7"
+    },
     openStrings: [],
     firstFinger: "",
     secondFinger: "21",
@@ -18,7 +25,11 @@ export const guitarChords = [
     barre: {position: "0", cells: ["0", "1", "2", "3", "4", "5"]},
     deadStrings: [],
   },
-  { name: "Minor 7m",
+  {
+    name: {
+      english: "Minor 7",
+      spanish: "Menor 7"
+    },
     openStrings: [],
     firstFinger: "",
     secondFinger: "",
@@ -27,7 +38,11 @@ export const guitarChords = [
     barre: {position: "0", cells: ["0", "1", "2", "3", "4", "5"]},
     deadStrings: [],
   },
-  { name: "Major 7M △",
+  {
+    name: {
+      english: "Major 7M △",
+      spanish: "Mayor 7M △"
+    },
     openStrings: [],
     firstFinger: "",
     secondFinger: "21",
@@ -36,7 +51,11 @@ export const guitarChords = [
     barre: {position: "0", cells: ["0", "1", "2", "3", "4"]},
     deadStrings: ["5"],
   },
-  { name: "Major 7m",
+  {
+    name: {
+      english: "Major 7",
+      spanish: "Mayor 7"
+    },
     openStrings: [],
     firstFinger: "",
     secondFinger: "",
@@ -45,7 +64,11 @@ export const guitarChords = [
     barre: {position: "0", cells: ["0", "1", "2", "3", "4"]},
     deadStrings: ["5"],
   },
-  { name: "Minor 7m",
+  {
+    name: {
+      english: "Minor 7",
+      spanish: "Menor 7"
+    },
     openStrings: [],
     firstFinger: "",
     secondFinger: "",
@@ -54,7 +77,11 @@ export const guitarChords = [
     barre: {position: "0", cells: ["0", "1", "2", "3", "4"]},
     deadStrings: ["5"],
   },
-  { name: "Minor 7m (half diminished) Ø",
+  {
+    name: {
+      english: "Minor 7 5b (half diminished) Ø",
+      spanish: "Menor 7 5b (semidisminuido) Ø"
+    },
     openStrings: [],
     firstFinger: "10",
     secondFinger: "51",
@@ -63,7 +90,11 @@ export const guitarChords = [
     barre: {position: "", cells: []},
     deadStrings: ["0","4"],
   },
-  { name: "Minor 7m (half diminished) Ø",
+  {
+    name: {
+      english: "Minor 7 5b (half diminished) Ø",
+      spanish: "Menor 7 5b (semidisminuido) Ø"
+    },
     openStrings: [],
     firstFinger: "40",
     secondFinger: "20",
@@ -72,7 +103,11 @@ export const guitarChords = [
     barre: {position: "", cells: []},
     deadStrings: ["0","5"],
   },
-  { name: "Minor 6",
+  {
+    name: {
+      english: "Minor 6",
+      spanish: "Menor 6"
+    },
     openStrings: [],
     firstFinger: "11",
     secondFinger: "21",
