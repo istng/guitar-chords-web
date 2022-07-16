@@ -1,19 +1,40 @@
 <template>
   <div class="app-container">
-    <div class="chords-container">
-      <GuitarChord v-for="guitarChord in guitarChords" class="guitar-chord" 
-        :name='guitarChord.name' 
-        :language='language'
-        :openStrings='guitarChord.openStrings' 
-        :firstFinger='guitarChord.firstFinger' 
-        :secondFinger='guitarChord.secondFinger' 
-        :thirdFinger='guitarChord.thirdFinger' 
-        :fourthFinger='guitarChord.fourthFinger' 
-        :barre='guitarChord.barre' 
-        :deadStrings='guitarChord.deadStrings'
-        v-bind:key='guitarChord.name.english'
-      />
-    </div>
+
+  <swiper class="mySwiper">
+    <swiper-slide>
+      <div class="chords-container">
+        <GuitarChord v-for="guitarChord in chordsWithSeventh" class="guitar-chord" 
+          :name='guitarChord.name' 
+          :language='language'
+          :openStrings='guitarChord.openStrings' 
+          :firstFinger='guitarChord.firstFinger' 
+          :secondFinger='guitarChord.secondFinger' 
+          :thirdFinger='guitarChord.thirdFinger' 
+          :fourthFinger='guitarChord.fourthFinger' 
+          :barre='guitarChord.barre' 
+          :deadStrings='guitarChord.deadStrings'
+          v-bind:key='guitarChord.name.english'
+        />
+      </div>      
+    </swiper-slide>
+    <swiper-slide>
+      <div class="chords-container">
+        <GuitarChord v-for="guitarChord in triads" class="guitar-chord" 
+          :name='guitarChord.name' 
+          :language='language'
+          :openStrings='guitarChord.openStrings' 
+          :firstFinger='guitarChord.firstFinger' 
+          :secondFinger='guitarChord.secondFinger' 
+          :thirdFinger='guitarChord.thirdFinger' 
+          :fourthFinger='guitarChord.fourthFinger' 
+          :barre='guitarChord.barre' 
+          :deadStrings='guitarChord.deadStrings'
+          v-bind:key='guitarChord.name.english'
+        />
+      </div>
+    </swiper-slide>
+  </swiper>
     <div class="scales-container">
       <GuitarScale v-for="guitarScale in guitarScales" class="guitar-scale"
         :name='guitarScale.name'
@@ -43,15 +64,22 @@ import {
 } from 'vue';
 import GuitarChord from './components/GuitarChord.vue';
 import GuitarScale from './components/GuitarScale.vue'
-import { guitarChords } from './variables/chords.js';
+import { chordsWithSeventh, triads } from './variables/chords.js';
 import { guitarScales } from './variables/scales.js';
+// Import Swiper Vue.js components
+import { Swiper, SwiperSlide } from "swiper/vue";
+
+// Import Swiper styles
+import "swiper/css";
 
 export default {
   name: 'App',
   components: {
     FontAwesomeIcon,
     GuitarChord,
-    GuitarScale
+    GuitarScale,
+    Swiper,
+    SwiperSlide
   },
   setup() {
     var language = ref("");
@@ -62,7 +90,8 @@ export default {
 
     return {
       language,
-      guitarChords,
+      chordsWithSeventh,
+      triads,
       guitarScales
     };
   }
@@ -121,4 +150,9 @@ a, a:hover, a:visited, a:active {
   color: inherit;
   text-decoration: none;
  }
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
 </style>

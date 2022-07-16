@@ -1,4 +1,4 @@
-export const guitarChords = [
+export const chordsWithSeventh = [
   {
     name: {
       english: "Major 7M △",
@@ -105,6 +105,19 @@ export const guitarChords = [
   },
   {
     name: {
+      english: "Diminished (Dim 7) 0",
+      spanish: "Disminuido (Dim 7) 0"
+    },
+    openStrings: [],
+    firstFinger: "20",
+    secondFinger: "41",
+    thirdFinger: "32",
+    fourthFinger: "12",
+    barre: {position: "", cells: []},
+    deadStrings: ["0", "5"],
+  },
+  {
+    name: {
       english: "Minor 6",
       spanish: "Menor 6"
     },
@@ -116,4 +129,85 @@ export const guitarChords = [
     barre: {position: "", cells: []},
     deadStrings: ["0", "4"],
   }
+];
+
+export const triads = [
+  {
+    name: {
+      english: "Major",
+      spanish: "Mayor"
+    },
+    openStrings: [],
+    firstFinger: "00",
+    secondFinger: "22",
+    thirdFinger: "12",
+    fourthFinger: "",
+    barre: {position: "", cells: []},
+    deadStrings: ["3", "4", "5"],
+  },
+  {
+    name: {
+      english: "Major",
+      spanish: "Mayor"
+    },
+    openStrings: [],
+    firstFinger: "20",
+    secondFinger: "00",
+    thirdFinger: "11",
+    fourthFinger: "",
+    barre: {position: "", cells: []},
+    deadStrings: ["3", "4", "5"],
+  },
+  {
+    name: {
+      english: "Major",
+      spanish: "Mayor"
+    },
+    openStrings: [],
+    firstFinger: "10",
+    secondFinger: "00",
+    thirdFinger: "21",
+    fourthFinger: "",
+    barre: {position: "", cells: []},
+    deadStrings: ["3", "4", "5"],
+  },
+  {
+    name: {
+      english: "Minor",
+      spanish: "Menor"
+    },
+    openStrings: [],
+    firstFinger: "00",
+    secondFinger: "11",
+    thirdFinger: "22",
+    fourthFinger: "",
+    barre: {position: "", cells: []},
+    deadStrings: ["3", "4", "5"],
+  },
+  {
+    name: {
+      english: "Minor",
+      spanish: "Menor"
+    },
+    openStrings: [],
+    firstFinger: "00",
+    secondFinger: "21",
+    thirdFinger: "12",
+    fourthFinger: "",
+    barre: {position: "", cells: []},
+    deadStrings: ["3", "4", "5"],
+  },
+  {
+    name: {
+      english: "Minor",
+      spanish: "Menor"
+    },
+    openStrings: [],
+    firstFinger: "20",
+    secondFinger: "10",
+    thirdFinger: "00",
+    fourthFinger: "",
+    barre: {position: "", cells: []},
+    deadStrings: ["3", "4", "5"],
+  },
 ];
