@@ -7,6 +7,8 @@
         <GuitarChord v-for="guitarChord in chordsWithSeventh" class="guitar-chord" 
           :name='guitarChord.name' 
           :language='language'
+          :tonic='guitarChord.tonic'
+          :isBarreTonic='guitarChord.isBarreTonic'
           :openStrings='guitarChord.openStrings' 
           :firstFinger='guitarChord.firstFinger' 
           :secondFinger='guitarChord.secondFinger' 
@@ -23,6 +25,8 @@
         <GuitarChord v-for="guitarChord in triads" class="guitar-chord" 
           :name='guitarChord.name' 
           :language='language'
+          :tonic='guitarChord.tonic'
+          :isBarreTonic='guitarChord.isBarreTonic'
           :openStrings='guitarChord.openStrings' 
           :firstFinger='guitarChord.firstFinger' 
           :secondFinger='guitarChord.secondFinger' 

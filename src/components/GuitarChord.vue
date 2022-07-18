@@ -43,6 +43,8 @@ export default {
   props: {
     name: String,
     language: String,
+    tonic: String,
+    isBarreTonic: Boolean,
     openStrings: Array,
     firstFinger: String,
     secondFinger: String,
@@ -79,6 +81,11 @@ export default {
     });
 
     const getClassType = (cell) => {
+      console.log(props.tonic, cell)
+      if(props.tonic == cell && props.isBarreTonic)
+        return "cell barreCellEnd tonicBarreCell";
+      if(props.tonic == cell)
+        return "cell tonicCell";
       if(cells[cell] == "O")
         return "cell openStringCell";
       if(cells[cell] == "1" || cells[cell] == "2" || cells[cell] == "3" || cells[cell] == "4")
@@ -162,7 +169,7 @@ export default {
 }
 
 .fingeredCell {
-  background-color: #f26c51;
+  background-color: #5d5dad;
 }
 .openStringCell {
   background-color: #7896c2;
@@ -176,7 +183,7 @@ export default {
 .barreCell {
   padding: 0;
   border-radius: 0;
-  border-left: 6px solid #f9684c !important;
+  border-left: 6px solid #5d5dad !important;
   height: 100%;
 }
 .deadStringCell {
@@ -185,5 +192,15 @@ export default {
 .cell {
   color: white;
   opacity: 0.95;
+}
+
+.tonicCell {
+  background-color: #f26c51;
+}
+.tonicBarreCell {
+  padding: 0;
+  border-radius: 0;
+  border-left: 6px solid #f26c51 !important;
+  height: 100%;
 }
 </style>

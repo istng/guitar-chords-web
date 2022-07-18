@@ -4,6 +4,8 @@ export const chordsWithSeventh = [
       english: "Major 7M △",
       spanish: "Mayor 7M △"
     },
+    tonic: "50",
+    isBarreTonic: false,
     openStrings: [],
     firstFinger: "50",
     secondFinger: "10",
@@ -17,6 +19,8 @@ export const chordsWithSeventh = [
       english: "Major 7",
       spanish: "Mayor 7"
     },
+    tonic: "50",
+    isBarreTonic: true,
     openStrings: [],
     firstFinger: "",
     secondFinger: "21",
@@ -30,6 +34,8 @@ export const chordsWithSeventh = [
       english: "Minor 7",
       spanish: "Menor 7"
     },
+    tonic: "50",
+    isBarreTonic: true,
     openStrings: [],
     firstFinger: "",
     secondFinger: "",
@@ -43,6 +49,8 @@ export const chordsWithSeventh = [
       english: "Major 7M △",
       spanish: "Mayor 7M △"
     },
+    tonic: "40",
+    isBarreTonic: true,
     openStrings: [],
     firstFinger: "",
     secondFinger: "21",
@@ -56,6 +64,8 @@ export const chordsWithSeventh = [
       english: "Major 7",
       spanish: "Mayor 7"
     },
+    tonic: "40",
+    isBarreTonic: true,
     openStrings: [],
     firstFinger: "",
     secondFinger: "",
@@ -69,6 +79,8 @@ export const chordsWithSeventh = [
       english: "Minor 7",
       spanish: "Menor 7"
     },
+    tonic: "40",
+    isBarreTonic: true,
     openStrings: [],
     firstFinger: "",
     secondFinger: "",
@@ -82,6 +94,8 @@ export const chordsWithSeventh = [
       english: "Minor 7 5b (half diminished) Ø",
       spanish: "Menor 7 5b (semidisminuido) Ø"
     },
+    tonic: "51",
+    isBarreTonic: false,
     openStrings: [],
     firstFinger: "10",
     secondFinger: "51",
@@ -95,6 +109,8 @@ export const chordsWithSeventh = [
       english: "Minor 7 5b (half diminished) Ø",
       spanish: "Menor 7 5b (semidisminuido) Ø"
     },
+    tonic: "40",
+    isBarreTonic: false,
     openStrings: [],
     firstFinger: "40",
     secondFinger: "20",
@@ -108,6 +124,8 @@ export const chordsWithSeventh = [
       english: "Diminished (Dim 7) 0",
       spanish: "Disminuido (Dim 7) 0"
     },
+    tonic: "41",
+    isBarreTonic: false,
     openStrings: [],
     firstFinger: "20",
     secondFinger: "41",
@@ -121,6 +139,8 @@ export const chordsWithSeventh = [
       english: "Minor 6",
       spanish: "Menor 6"
     },
+    tonic: "51",
+    isBarreTonic: false,
     openStrings: [],
     firstFinger: "11",
     secondFinger: "21",
@@ -137,6 +157,8 @@ export const triads = [
       english: "Major",
       spanish: "Mayor"
     },
+    tonic: "22",
+    isBarreTonic: false,
     openStrings: [],
     firstFinger: "00",
     secondFinger: "22",
@@ -150,6 +172,8 @@ export const triads = [
       english: "Major",
       spanish: "Mayor"
     },
+    tonic: "11",
+    isBarreTonic: false,
     openStrings: [],
     firstFinger: "20",
     secondFinger: "00",
@@ -163,6 +187,8 @@ export const triads = [
       english: "Major",
       spanish: "Mayor"
     },
+    tonic: "00",
+    isBarreTonic: false,
     openStrings: [],
     firstFinger: "10",
     secondFinger: "00",
@@ -176,6 +202,8 @@ export const triads = [
       english: "Minor",
       spanish: "Menor"
     },
+    tonic: "22",
+    isBarreTonic: false,
     openStrings: [],
     firstFinger: "00",
     secondFinger: "11",
@@ -189,6 +217,8 @@ export const triads = [
       english: "Minor",
       spanish: "Menor"
     },
+    tonic: "12",
+    isBarreTonic: false,
     openStrings: [],
     firstFinger: "00",
     secondFinger: "21",
@@ -202,6 +232,8 @@ export const triads = [
       english: "Minor",
       spanish: "Menor"
     },
+    tonic: "20",
+    isBarreTonic: false,
     openStrings: [],
     firstFinger: "20",
     secondFinger: "10",
@@ -209,5 +241,95 @@ export const triads = [
     fourthFinger: "",
     barre: {position: "", cells: []},
     deadStrings: ["3", "4", "5"],
+  },
+  {
+    name: {
+      english: "Major",
+      spanish: "Mayor"
+    },
+    tonic: "20",
+    isBarreTonic: false,
+    openStrings: [],
+    firstFinger: "30",
+    secondFinger: "20",
+    thirdFinger: "10",
+    fourthFinger: "",
+    barre: {position: "", cells: []},
+    deadStrings: ["0", "4", "5"],
+  },
+  {
+    name: {
+      english: "Major",
+      spanish: "Mayor"
+    },
+    tonic: "11",
+    isBarreTonic: false,
+    openStrings: [],
+    firstFinger: "20",
+    secondFinger: "11",
+    thirdFinger: "32",
+    fourthFinger: "",
+    barre: {position: "", cells: []},
+    deadStrings: ["0", "4", "5"],
+  },
+  {
+    name: {
+      english: "Major",
+      spanish: "Mayor"
+    },
+    tonic: "32",
+    isBarreTonic: false,
+    openStrings: [],
+    firstFinger: "10",
+    secondFinger: "21",
+    thirdFinger: "32",
+    fourthFinger: "",
+    barre: {position: "", cells: []},
+    deadStrings: ["0", "4", "5"],
+  },
+  {
+    name: {
+      english: "Minor",
+      spanish: "Menor"
+    },
+    tonic: "21",
+    isBarreTonic: false,
+    openStrings: [],
+    firstFinger: "10",
+    secondFinger: "31",
+    thirdFinger: "21",
+    fourthFinger: "",
+    barre: {position: "", cells: []},
+    deadStrings: ["0", "4", "5"],
+  },
+  {
+    name: {
+      english: "Minor",
+      spanish: "Menor"
+    },
+    tonic: "11",
+    isBarreTonic: false,
+    openStrings: [],
+    firstFinger: "20",
+    secondFinger: "31",
+    thirdFinger: "11",
+    fourthFinger: "",
+    barre: {position: "", cells: []},
+    deadStrings: ["0", "4", "5"],
+  },
+  {
+    name: {
+      english: "Minor",
+      spanish: "Menor"
+    },
+    tonic: "32",
+    isBarreTonic: false,
+    openStrings: [],
+    firstFinger: "20",
+    secondFinger: "10",
+    thirdFinger: "32",
+    fourthFinger: "",
+    barre: {position: "", cells: []},
+    deadStrings: ["0", "4", "5"],
   },
 ];
