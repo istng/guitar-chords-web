@@ -2,8 +2,9 @@
 
 ## TO DOs
 
+- add hosting names in spanish, without dashes too
 - keep improving on chords slider
-- color code tonics on chords, independent of finger number
+- fix barre tonic color
 - add more chords, maybe even a backend with the chords
 - make better readme
 - add repo to github main page
