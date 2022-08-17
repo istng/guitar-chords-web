@@ -154,8 +154,8 @@ export const chordsWithSeventh = [
 export const triads = [
   {
     name: {
-      english: "Major",
-      spanish: "Mayor"
+      english: "Major (Root Position)",
+      spanish: "Mayor (Fundamental)"
     },
     tonic: "22",
     isBarreTonic: false,
@@ -169,8 +169,8 @@ export const triads = [
   },
   {
     name: {
-      english: "Major",
-      spanish: "Mayor"
+      english: "Major (First Inversion)",
+      spanish: "Mayor (Primera Inversión)"
     },
     tonic: "11",
     isBarreTonic: false,
@@ -184,8 +184,8 @@ export const triads = [
   },
   {
     name: {
-      english: "Major",
-      spanish: "Mayor"
+      english: "Major (Second Inversion)",
+      spanish: "Mayor (Segunda Inversión)"
     },
     tonic: "00",
     isBarreTonic: false,
@@ -199,8 +199,8 @@ export const triads = [
   },
   {
     name: {
-      english: "Minor",
-      spanish: "Menor"
+      english: "Minor (Root Position)",
+      spanish: "Menor (Fundamental)"
     },
     tonic: "22",
     isBarreTonic: false,
@@ -214,8 +214,8 @@ export const triads = [
   },
   {
     name: {
-      english: "Minor",
-      spanish: "Menor"
+      english: "Minor (First Inversion)",
+      spanish: "Menor (Primera Inversión)"
     },
     tonic: "12",
     isBarreTonic: false,
@@ -229,10 +229,10 @@ export const triads = [
   },
   {
     name: {
-      english: "Minor",
-      spanish: "Menor"
+      english: "Minor (Second Inversion)",
+      spanish: "Menor (Segunda Inversión)"
     },
-    tonic: "20",
+    tonic: "00",
     isBarreTonic: false,
     openStrings: [],
     firstFinger: "20",
@@ -244,38 +244,8 @@ export const triads = [
   },
   {
     name: {
-      english: "Major",
-      spanish: "Mayor"
-    },
-    tonic: "20",
-    isBarreTonic: false,
-    openStrings: [],
-    firstFinger: "30",
-    secondFinger: "20",
-    thirdFinger: "10",
-    fourthFinger: "",
-    barre: {position: "", cells: []},
-    deadStrings: ["0", "4", "5"],
-  },
-  {
-    name: {
-      english: "Major",
-      spanish: "Mayor"
-    },
-    tonic: "11",
-    isBarreTonic: false,
-    openStrings: [],
-    firstFinger: "20",
-    secondFinger: "11",
-    thirdFinger: "32",
-    fourthFinger: "",
-    barre: {position: "", cells: []},
-    deadStrings: ["0", "4", "5"],
-  },
-  {
-    name: {
-      english: "Major",
-      spanish: "Mayor"
+      english: "Major (Root Position)",
+      spanish: "Mayor (Fundamental)"
     },
     tonic: "32",
     isBarreTonic: false,
@@ -289,8 +259,53 @@ export const triads = [
   },
   {
     name: {
-      english: "Minor",
-      spanish: "Menor"
+      english: "Major (First Inversion)",
+      spanish: "Mayor (Primera Inversión)"
+    },
+    tonic: "20",
+    isBarreTonic: false,
+    openStrings: [],
+    firstFinger: "30",
+    secondFinger: "20",
+    thirdFinger: "10",
+    fourthFinger: "",
+    barre: {position: "", cells: []},
+    deadStrings: ["0", "4", "5"],
+  },
+  {
+    name: {
+      english: "Major (Second Inversion)",
+      spanish: "Mayor (Segunda Inversión)"
+    },
+    tonic: "11",
+    isBarreTonic: false,
+    openStrings: [],
+    firstFinger: "20",
+    secondFinger: "11",
+    thirdFinger: "32",
+    fourthFinger: "",
+    barre: {position: "", cells: []},
+    deadStrings: ["0", "4", "5"],
+  },
+  {
+    name: {
+      english: "Minor (Root Position)",
+      spanish: "Menor (Fundamental)"
+    },
+    tonic: "32",
+    isBarreTonic: false,
+    openStrings: [],
+    firstFinger: "20",
+    secondFinger: "10",
+    thirdFinger: "32",
+    fourthFinger: "",
+    barre: {position: "", cells: []},
+    deadStrings: ["0", "4", "5"],
+  },
+  {
+    name: {
+      english: "Minor (First Inversion)",
+      spanish: "Menor (Primera Inversión)"
     },
     tonic: "21",
     isBarreTonic: false,
@@ -304,8 +319,8 @@ export const triads = [
   },
   {
     name: {
-      english: "Minor",
-      spanish: "Menor"
+      english: "Minor (Second Inversion)",
+      spanish: "Menor (Segunda Inversión)"
     },
     tonic: "11",
     isBarreTonic: false,
@@ -316,20 +331,5 @@ export const triads = [
     fourthFinger: "",
     barre: {position: "", cells: []},
     deadStrings: ["0", "4", "5"],
-  },
-  {
-    name: {
-      english: "Minor",
-      spanish: "Menor"
-    },
-    tonic: "32",
-    isBarreTonic: false,
-    openStrings: [],
-    firstFinger: "20",
-    secondFinger: "10",
-    thirdFinger: "32",
-    fourthFinger: "",
-    barre: {position: "", cells: []},
-    deadStrings: ["0", "4", "5"],
-  },
+  }
 ];
